@@ -29,8 +29,7 @@ This Node.js command-line application generates simple logos based on user input
 Sample generated files can be found in the `examples/` directory.
 
 ## Walkthrough Video
-
-[Link to the walkthrough video goes here](#)
+[My-Logo-Generator Video](https://drive.google.com/file/d/1k2sk0T20nouh5psz-hg8Cs_jdYU4Trqx/view?usp=drive_link)
 
 ## Contributing
 

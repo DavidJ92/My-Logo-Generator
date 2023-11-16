@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path'); // Import the path module
+
 // Load inquirer dynamically using require
 const inquirerPromise = import('inquirer').catch((err) => {
   console.error('Error loading inquirer:', err);
@@ -11,6 +12,7 @@ inquirerPromise.then(({ default: inquirer }) => {
 
   async function generateLogo() {
     try {
+      // Prompt user for input using inquirer
       const userInput = await inquirer.prompt([
         {
           type: 'input',
@@ -38,6 +40,7 @@ inquirerPromise.then(({ default: inquirer }) => {
 
       let shape;
       switch (userInput.shape.toLowerCase()) {
+        // Create shape object based on user input
         case 'circle':
           shape = new Circle(userInput.shapeColor);
           break;
@@ -52,18 +55,19 @@ inquirerPromise.then(({ default: inquirer }) => {
           return;
       }
 
+      // Generate SVG content using the selected shape and user input
       const svgContent = shape.generateSVG(userInput.text, userInput.textColor);
 
-     // Specify the file path within the examples folder
-    const filePath = path.join(__dirname, 'examples', 'logo.svg');
+      // Specify the file path within the examples folder
+      const filePath = path.join(__dirname, 'examples', 'logo.svg');
 
-    // Write the SVG content to the specified file path
-    fs.writeFileSync(filePath, svgContent);
-    console.log('Generated logo.svg in examples folder');
-  } catch (err) {
-    console.error('Error generating logo:', err);
+      // Write the SVG content to the specified file path
+      fs.writeFileSync(filePath, svgContent);
+      console.log('Generated logo.svg in examples folder');
+    } catch (err) {
+      console.error('Error generating logo:', err);
+    }
   }
-}
 
-generateLogo();
+  generateLogo();
 });
