@@ -26,7 +26,7 @@ This Node.js command-line application generates simple logos based on user input
 
 ## Examples
 
-Sample generated SVG files can be found in the `examples/` directory.
+Sample generated files can be found in the `examples/` directory.
 
 ## Walkthrough Video
 
@@ -42,4 +42,6 @@ Sample generated SVG files can be found in the `examples/` directory.
 
 ## License
 
-This project is licensed under the ISC License - see the [LICENSE.md](LICENSE.md) file for details.
+![License](https://img.shields.io/badge/license-MIT-brightgreen)
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
